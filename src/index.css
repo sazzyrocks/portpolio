@@ -1,0 +1,64 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Newsreader", "Instrument Serif", Georgia, serif;
+  --font-display: "Instrument Serif", "Newsreader", Georgia, serif;
+  --font-sans: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+
+  --color-paper: #0b0c0e;
+  --color-paper-card: #131418;
+  --color-paper-surface: #1a1c22;
+  --color-paper-border: #252830;
+  --color-paper-hover: #2e323c;
+  --color-accent: #c99558;
+  --color-accent-hover: #dcb07e;
+  --color-ink: #f4efea;
+  --color-ink-muted: #9e9992;
+  --color-ink-subtle: #69655f;
+}
+
+@layer base {
+  * {
+    border-color: var(--color-paper-border);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    overflow-x: clip;
+    background-color: var(--color-paper);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+  }
+
+  body {
+    overflow-x: clip;
+    min-height: 100vh;
+  }
+
+  ::selection {
+    background-color: rgba(201, 149, 88, 0.25);
+    color: #f4efea;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0b0c0e;
+}
+::-webkit-scrollbar-thumb {
+  background: #252830;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #393e4a;
+}
+
+/* Editorial subtle noise overlay (optional CSS radial ambient) */
+.bg-ambient-grain {
+  background-image: radial-gradient(rgba(201, 149, 88, 0.04) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
